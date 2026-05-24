@@ -37,3 +37,12 @@ export const SITE_CONFIG = {
     },
   },
 } as const
+schema: {
+    person: {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Merve Algan',
+      jobTitle: 'SEO & GEO Manager',
+      url: 'https://mervealgan.com',
+    },
+  },
