@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* ─── DESIGN TOKENS ─────────────────────────────────────── */
+:root {
+  /* Primitive */
+  --acid:    #d4fe08;
+  --acid-dim: #1a2200;
+  --acid-border: rgba(212,254,8,0.18);
+
+  --navy-950: #060910;
+  --navy-900: #0A0E14;
+  --navy-800: #0F1520;
+  --navy-700: #141C28;
+  --navy-600: #162032;
+  --navy-500: #1A2840;
+  --navy-400: #1E2E44;
+  --navy-300: #243650;
+  --navy-200: #2E4465;
+
+  --text-100: #E8EDF5;
+  --text-200: #B8C4D8;
+  --text-300: #8A9EC0;
+  --text-400: #5A7499;
+  --text-500: #3A506A;
+
+  /* Semantic */
+  --color-background:      var(--navy-900);
+  --color-surface:         var(--navy-600);
+  --color-surface-hover:   var(--navy-500);
+  --color-border:          var(--navy-400);
+  --color-border-interactive: var(--navy-300);
+  --color-ring:            var(--acid);
+  --color-text:            var(--text-100);
+  --color-text-muted:      var(--text-300);
+  --color-primary:         var(--acid);
+  --color-primary-hover:   #c8f006;
+  --color-on-primary:      var(--navy-900);
+  --radius:                6px;
+
+  /* Status */
+  --color-success: #4ade80;
+  --color-warning: var(--acid);
+  --color-error:   #f87171;
+  --color-info:    #60a5fa;
+
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── BASE ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Syne', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--navy-900); }
+::-webkit-scrollbar-thumb { background: var(--navy-300); border-radius: 2px; }
+
+/* ─── SELECTION ─────────────────────────────────────────── */
+::selection { background: var(--acid-dim); color: var(--acid); }
+
+/* ─── FOCUS VISIBLE ─────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--acid);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+.font-mono { font-family: 'IBM Plex Mono', monospace; }
+.font-display { font-family: 'Syne', sans-serif; }
+
+/* ─── REDUCED MOTION ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── NOISE TEXTURE ─────────────────────────────────────── */
+.noise-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ─── GRID PATTERN ───────────────────────────────────────── */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(212,254,8,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,254,8,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ─── GLOW ───────────────────────────────────────────────── */
+.acid-glow {
+  box-shadow: 0 0 20px rgba(212,254,8,0.15), 0 0 60px rgba(212,254,8,0.05);
+}
+.acid-text-glow {
+  text-shadow: 0 0 20px rgba(212,254,8,0.4);
+}
+
+/* ─── BLINK CURSOR ───────────────────────────────────────── */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.cursor-blink { animation: blink 0.9s infinite; }
+
+/* ─── SCAN LINE ──────────────────────────────────────────── */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* ─── MARQUEE ────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 28s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }

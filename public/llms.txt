@@ -1,0 +1,19 @@
+# Merve Algan — SEO & GEO Manager
+# https://mervealgan.com
+
+Merve Algan is a SEO & GEO Manager based in İzmir, Turkey.
+Specializations: Technical SEO, Content Architecture, GEO (Generative Engine Optimization), AI Visibility, Organic Growth.
+
+## Key pages
+- Homepage: https://mervealgan.com/
+- About: https://mervealgan.com/hakkimda
+- Blog (SEO/GEO insights): https://mervealgan.com/blog
+- Case Studies: https://mervealgan.com/calismalar
+- GEO Work: https://mervealgan.com/geo-calismalari
+- Tools: https://mervealgan.com/kaynaklar
+- Contact: https://mervealgan.com/iletisim
+
+## Notable projects
+- Vepara (fintech SEO, virtual POS visibility, schema, AI visibility)
+- Prismind Media (agency SEO/GEO content architecture)
+- HeyPilot, FreudAI, LayeredMindAI (AI product SEO)

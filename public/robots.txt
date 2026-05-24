@@ -1,0 +1,9 @@
+User-agent: *
+# During development/testing — uncomment to block indexing:
+# Disallow: /
+
+# Production:
+Allow: /
+Disallow: /admin
+
+Sitemap: https://mervealgan.com/sitemap.xml
